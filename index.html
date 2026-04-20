@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jefferson Morales Melendez — Software Engineer & Cybersecurity</title>
+<meta name="description" content="Portfolio of Jefferson Morales Melendez — Computer Science student at The Catholic University of America specializing in software engineering, cybersecurity, and full-stack web development." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root,
+  [data-theme="dark"] {
+    --bg: #0d0d0f;
+    --bg-soft: #141417;
+    --bg-elevated: #1a1a1e;
+    --ink: #f5f1e8;
+    --ink-dim: #b5b0a4;
+    --ink-faint: #6b665c;
+    --line: #26262b;
+    --line-soft: #1f1f24;
+    --accent: #c9ff4a;
+    --accent-dim: #8fa832;
+    --accent-glow: rgba(201, 255, 74, 0.12);
+    --warn: #ffb347;
+    --grain-opacity: 0.035;
+    --serif: 'Fraunces', 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  [data-theme="light"] {
+    --bg: #f4efe2;
+    --bg-soft: #ebe5d3;
+    --bg-elevated: #e2dcc5;
+    --ink: #18181c;
+    --ink-dim: #4e4e54;
+    --ink-faint: #86827a;
+    --line: #d2ccba;
+    --line-soft: #dfd9c5;
+    --accent: #4a6619;
+    --accent-dim: #6d8a2f;
+    --accent-glow: rgba(74, 102, 25, 0.10);
+    --warn: #b45a0a;
+    --grain-opacity: 0.06;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  /* Smooth theme swap across all surfaces */
+  nav, section, footer, .project-card, .leader-card, .exp-item,
+  .skills-group h4, .semester, .course, .contact-links a,
+  .hero-meta div p, .hero-meta a, .project-stack span,
+  .contact, .hero-meta {
+    transition: background-color 0.5s ease, color 0.5s ease,
+                border-color 0.5s ease;
+  }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: var(--grain-opacity);
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    transition: opacity 0.5s ease;
+  }
+  [data-theme="dark"] body::before { mix-blend-mode: screen; }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: color-mix(in srgb, var(--bg) 72%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .theme-toggle {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-dim);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, color 0.3s, transform 0.3s;
+  }
+  .theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: rotate(20deg);
+  }
+  .theme-toggle svg {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .theme-toggle .sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  .theme-toggle .moon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+  }
+  [data-theme="light"] .theme-toggle .sun {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+  }
+  [data-theme="light"] .theme-toggle .moon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  .logo {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+  .logo span { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a::before {
+    content: counter(nav-item, decimal-leading-zero) '/ ';
+    color: var(--ink-faint);
+  }
+  .nav-links { counter-reset: nav-item; }
+  .nav-links li { counter-increment: nav-item; }
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+  }
+
+  /* LAYOUT */
+  section {
+    padding: 8rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+  @media (max-width: 720px) {
+    section { padding: 5rem 1.5rem; }
+  }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 6rem;
+    position: relative;
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at top, rgba(0,0,0,0.7) 30%, transparent 70%);
+  }
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-dim);
+    letter-spacing: 0.08em;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-eyebrow .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.9); }
+  }
+  .hero-name {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(3.5rem, 11vw, 11rem);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+  }
+  .hero-name .accent {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--ink-dim);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .hero-tags span { display: flex; align-items: center; gap: 0.75rem; }
+  .hero-tags span:not(:last-child)::after {
+    content: '✦';
+    color: var(--accent);
+    font-size: 0.7rem;
+    margin-left: 1.25rem;
+  }
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .hero-meta div label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .hero-meta div p {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+  .hero-meta a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .hero-meta a:hover { border-color: var(--accent); color: var(--accent); }
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem; right: 2rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .scroll-indicator::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--ink-faint), transparent);
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  @media (max-width: 880px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+  .about-heading {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .about-heading em { color: var(--accent); font-style: italic; }
+  .about-body p {
+    font-size: 1.08rem;
+    line-height: 1.75;
+    color: var(--ink-dim);
+    margin-bottom: 1.5rem;
+    max-width: 60ch;
+  }
+  .about-body p:first-child::first-letter {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+    float: left;
+    line-height: 0.85;
+    padding: 0.3rem 0.75rem 0 0;
+    color: var(--accent);
+  }
+
+  /* EXPERIENCE */
+  .exp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 3rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--line);
+    transition: background 0.3s;
+    position: relative;
+  }
+  .exp-item:last-child { border-bottom: 1px solid var(--line); }
+  .exp-item:hover { background: linear-gradient(to right, var(--bg-soft), transparent 80%); }
+  .exp-item:hover .exp-company { color: var(--accent); }
+  @media (max-width: 720px) {
+    .exp-item { grid-template-columns: 1fr; gap: 1rem; padding: 2rem 0; }
+  }
+  .exp-date {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-top: 0.3rem;
+  }
+  .exp-role {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  .exp-company {
+    font-family: var(--mono);
+    font-size: 0.88rem;
+    letter-spacing: 0.03em;
+    color: var(--ink-dim);
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+  }
+  .exp-company span { color: var(--ink-faint); }
+  .exp-desc {
+    color: var(--ink-dim);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 65ch;
+  }
+  .exp-desc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0;
+  }
+  .exp-desc li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.6rem;
+  }
+  .exp-desc li::before {
+    content: '—';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+  }
+  @media (max-width: 720px) {
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+  .project-card {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s, border-color 0.4s;
+    cursor: default;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle at top right, var(--accent-glow), transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .project-card:hover::before { opacity: 1; }
+  .project-num {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+  .project-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .project-desc {
+    color: var(--ink-dim);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .project-stack span {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--line);
+    color: var(--ink-dim);
+    letter-spacing: 0.04em;
+  }
+
+  /* SKILLS */
+  .skills-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  @media (max-width: 880px) {
+    .skills-container { grid-template-columns: 1fr; gap: 2rem; }
+  }
+  .skills-heading {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .skills-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+  }
+  .skills-group h4 {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .skills-group ul { list-style: none; }
+  .skills-group li {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    padding: 0.4rem 0;
+    color: var(--ink);
+  }
+
+  /* COURSEWORK */
+  .courses-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: end;
+  }
+  @media (max-width: 720px) {
+    .courses-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+  .courses-heading {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .courses-meta {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .courses-meta .stat {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .courses-meta .stat strong {
+    display: block;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.02em;
+  }
+  .semester {
+    border-top: 1px solid var(--line);
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2rem;
+  }
+  @media (max-width: 720px) {
+    .semester { grid-template-columns: 1fr; gap: 1rem; }
+  }
+  .sem-header {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-dim);
+  }
+  .sem-header .sem-gpa {
+    display: block;
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  .course-list {
+    display: grid;
+    gap: 0.6rem;
+  }
+  .course {
+    display: grid;
+    grid-template-columns: 90px 1fr 60px;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.55rem 0;
+    border-bottom: 1px dashed var(--line-soft);
+    transition: padding 0.2s;
+  }
+  .course:hover { padding-left: 0.5rem; }
+  .course-code {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  .course-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink);
+  }
+  .course-name.highlight { color: var(--accent); font-style: italic; }
+  .course-grade {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-dim);
+    text-align: right;
+    letter-spacing: 0.04em;
+  }
+
+  /* LEADERSHIP */
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+  .leader-card {
+    padding: 2.5rem;
+    border: 1px solid var(--line);
+    position: relative;
+    transition: border-color 0.3s;
+  }
+  .leader-card:hover { border-color: var(--accent); }
+  .leader-card .icon {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+  .leader-card h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .leader-card .org {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 1rem;
+  }
+  .leader-card p {
+    color: var(--ink-dim);
+    line-height: 1.65;
+    font-size: 0.98rem;
+  }
+
+  /* CONTACT / FOOTER */
+  .contact {
+    text-align: left;
+    border-top: 1px solid var(--line);
+    padding: 8rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .contact-heading {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(3rem, 9vw, 8rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 3rem;
+  }
+  .contact-heading em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .contact-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+  }
+  .contact-links a {
+    display: block;
+    padding: 1.25rem 0;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--ink);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid var(--line);
+    transition: padding 0.3s, color 0.3s;
+  }
+  .contact-links a:hover {
+    padding-left: 1rem;
+    color: var(--accent);
+  }
+  .contact-links a .label {
+    display: block;
+    font-size: 0.68rem;
+    color: var(--ink-faint);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.15em;
+  }
+  footer {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Asterisk divider */
+  .divider {
+    text-align: center;
+    color: var(--accent);
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    padding: 2rem 0;
+    letter-spacing: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">JM <span>//</span> Portfolio<span>_</span></div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#coursework">Coursework</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" aria-label="Toggle dark / light theme" onclick="toggleTheme()">
+      <!-- Sun (shown in dark mode, click to go light) -->
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4.5"/>
+        <line x1="12" y1="1.5" x2="12" y2="4"/>
+        <line x1="12" y1="20" x2="12" y2="22.5"/>
+        <line x1="1.5" y1="12" x2="4" y2="12"/>
+        <line x1="20" y1="12" x2="22.5" y2="12"/>
+        <line x1="4.2" y1="4.2" x2="6" y2="6"/>
+        <line x1="18" y1="18" x2="19.8" y2="19.8"/>
+        <line x1="4.2" y1="19.8" x2="6" y2="18"/>
+        <line x1="18" y1="6" x2="19.8" y2="4.2"/>
+      </svg>
+      <!-- Moon (shown in light mode, click to go dark) -->
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-grid"></div>
+  <div class="hero-eyebrow">
+    <span class="dot"></span>
+    <span>Available for Summer 2026 internships</span>
+  </div>
+  <h1 class="hero-name">
+    Jefferson<br>
+    Morales<br>
+    <span class="accent">Melendez.</span>
+  </h1>
+  <div class="hero-tags">
+    <span>Software Engineering</span>
+    <span>Cybersecurity</span>
+    <span>Full-Stack Web</span>
+  </div>
+  <div class="hero-meta">
+    <div>
+      <label>Based in</label>
+      <p>Washington, D.C. &mdash; now Galway, IE</p>
+    </div>
+    <div>
+      <label>Studying</label>
+      <p>B.S. Computer Science, CUA</p>
+    </div>
+    <div>
+      <label>Reach out</label>
+      <p><a href="mailto:moralesje@cua.edu">moralesje@cua.edu</a></p>
+    </div>
+    <div>
+      <label>LinkedIn</label>
+      <p><a href="https://www.linkedin.com/in/jefferson-morales-melendez/" target="_blank" rel="noopener">/in/jefferson-morales-melendez</a></p>
+    </div>
+  </div>
+  <div class="scroll-indicator">Scroll</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="reveal">
+  <div class="section-label">01 &mdash; About</div>
+  <div class="about-grid">
+    <h2 class="about-heading">
+      A builder at the <em>intersection</em> of code, security, and people.
+    </h2>
+    <div class="about-body">
+      <p>
+        I'm a Computer Science undergraduate at The Catholic University of America (minor in Mathematics) drawn to the places where clean engineering meets real-world trust &mdash; full-stack apps that small businesses actually use, and security tooling that makes complex systems a little less opaque.
+      </p>
+      <p>
+        My work spans Django backends and React front ends, automation with Ansible, and cybersecurity fundamentals picked up at MITRE and sharpened in coursework on network security and operating systems. I care about shipping clearly, documenting thoroughly, and building with the person on the other side of the screen in mind.
+      </p>
+      <p>
+        This semester I'm studying abroad at the University of Galway in Ireland &mdash; writing code in a new timezone and learning how engineers think on the other side of the Atlantic.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&#10057; &#10057; &#10057;</div>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="reveal">
+  <div class="section-label">02 &mdash; Experience</div>
+  <h2 class="about-heading" style="margin-bottom: 3rem;">Where I've <em>worked</em>.</h2>
+  <div class="exp-grid">
+
+    <div class="exp-item">
+      <div class="exp-date">May 2025 &mdash; Present</div>
+      <div>
+        <h3 class="exp-role">Freelance Web Developer</h3>
+        <div class="exp-company">Self-Employed <span>/</span> Largo, MD</div>
+        <div class="exp-desc">
+          <ul>
+            <li>Build and launch full-stack websites for small businesses using React, Node.js, and vanilla JS/HTML/CSS to lift online visibility and customer engagement.</li>
+            <li>Improved responsiveness and UX for client sites; internal telemetry shows a 15&ndash;20% increase in customer inquiries post-launch.</li>
+            <li>Gather requirements, iterate on designs, and ship maintainable sites aligned with each business's goals.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Sep 2024 &mdash; Sep 2025</div>
+      <div>
+        <h3 class="exp-role">Software Engineering Intern</h3>
+        <div class="exp-company">DeeSimone Inc. <span>/</span> Washington, DC</div>
+        <div class="exp-desc">
+          <ul>
+            <li>Shipped 3+ backend and frontend features for <em>Hoppin</em>, a startup social app, working in Django.</li>
+            <li>Partnered with lead engineers on code review, debugging, and releases &mdash; reducing feature delivery time by ~15%.</li>
+            <li>Implemented geolocation-based live meetup broadcasting that supported 100+ user sessions during beta testing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Aug 2022 &mdash; Jan 2023</div>
+      <div>
+        <h3 class="exp-role">Cybersecurity Intern</h3>
+        <div class="exp-company">The MITRE Corporation <span>/</span> McLean, VA</div>
+        <div class="exp-desc">
+          <ul>
+            <li>Supported cybersecurity engineering efforts with exposure to threat modeling, secure configuration, and automation practices.</li>
+            <li>Prototyped infrastructure automation using Ansible to streamline cloud dev workflows and cut manual setup steps.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider">&#10057; &#10057; &#10057;</div>
+
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+  <div class="section-label">03 &mdash; Selected Projects</div>
+  <h2 class="about-heading" style="margin-bottom: 3rem;">Things I've <em>built</em>.</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-num">Project / 001</div>
+      <h3 class="project-title">Network Vulnerability Scanner</h3>
+      <p class="project-desc">
+        Co-developed a tool that detects, ranks, and reports common network vulnerabilities, then generates automated PDF reports with actionable remediation notes. Implemented modular scanning workflows and a results-aggregation layer so findings are easy to triage.
+      </p>
+      <div class="project-stack">
+        <span>Python</span>
+        <span>Networking</span>
+        <span>Security</span>
+        <span>PDF Reporting</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">Project / 002</div>
+      <h3 class="project-title">LocalAid Connect</h3>
+      <p class="project-desc">
+        A full-stack web app that helps people find nearby community resources &mdash; food banks, medicine &amp; vaccines, shelter, legal support. React front end, Node/Express + SQLite backend, with location-based search wired up through Google Maps/Places and maintainable REST APIs.
+      </p>
+      <div class="project-stack">
+        <span>React</span>
+        <span>Node.js</span>
+        <span>Express</span>
+        <span>SQLite</span>
+        <span>Google Maps API</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider">&#10057; &#10057; &#10057;</div>
+
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+  <div class="section-label">04 &mdash; Toolbox</div>
+  <div class="skills-container">
+    <h2 class="skills-heading">The <em>stack</em> I reach for.</h2>
+    <div class="skills-groups">
+      <div class="skills-group">
+        <h4>Languages</h4>
+        <ul>
+          <li>Python</li>
+          <li>Java</li>
+          <li>JavaScript</li>
+          <li>C++</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <div class="skills-group">
+        <h4>Web &amp; Frameworks</h4>
+        <ul>
+          <li>React</li>
+          <li>Node.js &amp; Express</li>
+          <li>Django</li>
+          <li>REST APIs</li>
+          <li>HTML &amp; CSS</li>
+        </ul>
+      </div>
+      <div class="skills-group">
+        <h4>Systems &amp; Ops</h4>
+        <ul>
+          <li>Ansible</li>
+          <li>Git &amp; GitHub</li>
+          <li>Linux / CLI</li>
+          <li>SQLite</li>
+          <li>Operating Systems</li>
+          <li>Machine Learning</li>
+        </ul>
+      </div>
+      <div class="skills-group">
+        <h4>Security &amp; Practice</h4>
+        <ul>
+          <li>Network Security</li>
+          <li>Threat Modeling</li>
+          <li>Debugging</li>
+          <li>Technical Writing</li>
+          <li>Client Communication</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&#10057; &#10057; &#10057;</div>
+
+<!-- COURSEWORK -->
+<section id="coursework" class="reveal">
+  <div class="section-label">05 &mdash; Academic Record</div>
+  <div class="courses-intro">
+    <h2 class="courses-heading">Six semesters at <em>CUA</em> &mdash; now studying abroad in Ireland.</h2>
+    <div class="courses-meta">
+      <div class="stat"><strong>82</strong>Credits Completed</div>
+      <div class="stat"><strong>2027</strong>Expected Graduation</div>
+    </div>
+  </div>
+
+  <div class="semester">
+    <div class="sem-header">
+      Fall 2023
+    </div>
+    <div class="course-list">
+      <div class="course"><span class="course-code">CSC 120</span><span class="course-name">Intro to Computational Thinking</span><span class="course-grade">B&minus;</span></div>
+      <div class="course"><span class="course-code">CSC 123</span><span class="course-name">Intro to Computer Programming</span><span class="course-grade">A</span></div>
+      <div class="course"><span class="course-code">MATH 121</span><span class="course-name">Analytic Geometry &amp; Calc I</span><span class="course-grade">B+</span></div>
+      <div class="course"><span class="course-code">ENGR 121</span><span class="course-name">Engineering Math Workshop I</span><span class="course-grade">P</span></div>
+      <div class="course"><span class="course-code">ENG 101</span><span class="course-name">Writing and Rhetoric</span><span class="course-grade">B+</span></div>
+      <div class="course"><span class="course-code">PHIL 201</span><span class="course-name">The Classical Mind</span><span class="course-grade">B+</span></div>
+    </div>
+  </div>
+
+  <div class="semester">
+    <div class="sem-header">
+      Spring 2024
+    </div>
+    <div class="course-list">
+      <div class="course"><span class="course-code">CSC 210</span><span class="course-name">Discrete Mathematics</span><span class="course-grade">C+</span></div>
+      <div class="course"><span class="course-code">CSC 223</span><span class="course-name highlight">Object-Oriented Programming w/ Java</span><span class="course-grade">A</span></div>
+      <div class="course"><span class="course-code">MATH 122</span><span class="course-name highlight">Analytic Geometry &amp; Calc II</span><span class="course-grade">A</span></div>
+      <div class="course"><span class="course-code">ENGR 122</span><span class="course-name">Engineering Math Workshop II</span><span class="course-grade">P</span></div>
+      <div class="course"><span class="course-code">TRS 201</span><span class="course-name">Foundations of Theology I</span><span class="course-grade">A&minus;</span></div>
+      <div class="course"><span class="course-code">PHIL 202</span><span class="course-name">The Modern Mind</span><span class="course-grade">B</span></div>
+    </div>
+  </div>
+
+  <div class="semester">
+    <div class="sem-header">
+      Fall 2024
+    </div>
+    <div class="course-list">
+      <div class="course"><span class="course-code">CSC 212</span><span class="course-name">Theory of Computing</span><span class="course-grade">B</span></div>
+      <div class="course"><span class="course-code">CSC 280</span><span class="course-name">Data Structures</span><span class="course-grade">B</span></div>
+      <div class="course"><span class="course-code">CSC 370</span><span class="course-name">Programming Languages</span><span class="course-grade">B+</span></div>
+      <div class="course"><span class="course-code">BIOL 105</span><span class="course-name">Mechanisms of Life I</span><span class="course-grade">A&minus;</span></div>
+      <div class="course"><span class="course-code">BIOL 115</span><span class="course-name">Mechanisms of Life I &mdash; Lab</span><span class="course-grade">A</span></div>
+      <div class="course"><span class="course-code">PSY 201</span><span class="course-name">General Psychology</span><span class="course-grade">B+</span></div>
+    </div>
+  </div>
+
+  <div class="semester">
+    <div class="sem-header">
+      Spring 2025
+    </div>
+    <div class="course-list">
+      <div class="course"><span class="course-code">CSC 322</span><span class="course-name">Intro to Computer Graphics</span><span class="course-grade">C+</span></div>
+      <div class="course"><span class="course-code">CSC 323</span><span class="course-name">Intro to Computer Networks</span><span class="course-grade">B</span></div>
+      <div class="course"><span class="course-code">CSC 326</span><span class="course-name">Switching Circuits &amp; Logic Design</span><span class="course-grade">C+</span></div>
+      <div class="course"><span class="course-code">CSC 327</span><span class="course-name">Switching Circuits &amp; Logic Lab</span><span class="course-grade">C+</span></div>
+      <div class="course"><span class="course-code">CSC 363</span><span class="course-name highlight">Software Engineering</span><span class="course-grade">B+</span></div>
+      <div class="course"><span class="course-code">TRS 202B</span><span class="course-name">The Church &amp; the Human Person</span><span class="course-grade">C+</span></div>
+    </div>
+  </div>
+
+  <div class="semester">
+    <div class="sem-header">
+      Fall 2025
+    </div>
+    <div class="course-list">
+      <div class="course"><span class="course-code">CSC 390</span><span class="course-name">Computer Organization &amp; Architecture</span><span class="course-grade">C+</span></div>
+      <div class="course"><span class="course-code">CSC 426</span><span class="course-name highlight">Computer &amp; Network Security</span><span class="course-grade">A&minus;</span></div>
+      <div class="course"><span class="course-code">MATH 221</span><span class="course-name highlight">Analytic Geometry &amp; Calc III</span><span class="course-grade">A</span></div>
+      <div class="course"><span class="course-code">PHYS 205</span><span class="course-name">College Physics I</span><span class="course-grade">B&minus;</span></div>
+      <div class="course"><span class="course-code">PHYS 225</span><span class="course-name">Introductory Mechanics Lab</span><span class="course-grade">A</span></div>
+    </div>
+  </div>
+
+  <div class="semester">
+    <div class="sem-header">
+      Spring 2026
+      <span class="sem-gpa" style="color: var(--warn);">In progress &mdash; University of Galway</span>
+    </div>
+    <div class="course-list">
+      <div class="course"><span class="course-code">AR 1104</span><span class="course-name highlight">Medieval Ireland</span><span class="course-grade">&mdash;</span></div>
+      <div class="course"><span class="course-code">IS 2103</span><span class="course-name highlight">Irish Landscapes</span><span class="course-grade">&mdash;</span></div>
+      <div class="course"><span class="course-code">MA 203</span><span class="course-name">Linear Algebra</span><span class="course-grade">&mdash;</span></div>
+      <div class="course"><span class="course-code">CS 211</span><span class="course-name">Web Development</span><span class="course-grade">&mdash;</span></div>
+      <div class="course"><span class="course-code">CT 210</span><span class="course-name">Programming &amp; Operating Systems</span><span class="course-grade">&mdash;</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&#10057; &#10057; &#10057;</div>
+
+<!-- LEADERSHIP -->
+<section id="leadership" class="reveal">
+  <div class="section-label">06 &mdash; Leadership &amp; Service</div>
+  <h2 class="about-heading" style="margin-bottom: 3rem;">Beyond the <em>keyboard</em>.</h2>
+  <div class="leadership-grid">
+
+    <div class="leader-card">
+      <div class="icon">&#10070;</div>
+      <h3>President &mdash; Leetcode &amp; Technical Interview Club</h3>
+      <div class="org">The Catholic University of America</div>
+      <p>
+        Founded a student-run club to prep peers for coding assessments and technical interviews &mdash; helping classmates land internships at companies where algorithmic and behavioral interviews are the gate.
+      </p>
+    </div>
+
+    <div class="leader-card">
+      <div class="icon">&#10038;</div>
+      <h3>Missioner &mdash; Catholic University Ministry</h3>
+      <div class="org">Guatemala City Mission Trip</div>
+      <p>
+        Served under-resourced communities through volunteer work abroad in Guatemala City &mdash; an experience that shaped how I think about who technology should serve and why accessibility matters.
+      </p>
+    </div>
+
+    <div class="leader-card">
+      <div class="icon">&#10069;</div>
+      <h3>Scholarship Recipient</h3>
+      <div class="org">CUA Honors &amp; Awards</div>
+      <p>
+        Recipient of the CUA Scholarship, CUA Grant, and the Anne Finnegan Favo Endowed Scholarship &mdash; awarded for academic performance and contribution to the university community.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact reveal" id="contact">
+  <div class="section-label">07 &mdash; Let's Talk</div>
+  <h2 class="contact-heading">
+    Got a project, a role,<br>
+    or just want to <em>say hello?</em>
+  </h2>
+  <div class="contact-links">
+    <a href="mailto:moralesje@cua.edu">
+      <span class="label">Email &rarr;</span>
+      moralesje@cua.edu
+    </a>
+    <a href="tel:+12405598818">
+      <span class="label">Phone &rarr;</span>
+      (240) 559&#8209;8818
+    </a>
+    <a href="https://www.linkedin.com/in/jefferson-morales-melendez/" target="_blank" rel="noopener">
+      <span class="label">LinkedIn &rarr;</span>
+      /in/jefferson-morales-melendez
+    </a>
+    <a href="#top">
+      <span class="label">Back &rarr;</span>
+      Top of page
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div>&copy; 2026 Jefferson Morales Melendez</div>
+  <div>Designed &amp; built with care &mdash; Washington, D.C. &times; Galway</div>
+</footer>
+
+<script>
+  // Theme toggle — persists preference, respects system default, degrades gracefully
+  (function initTheme() {
+    let stored = null;
+    try { stored = localStorage.getItem('jm-theme'); } catch (e) {}
+    const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const initial = stored || (systemPrefersLight ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', initial);
+  })();
+
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('jm-theme', next); } catch (e) {}
+  }
+
+  // Reveal-on-scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Update "Based in" based on today's date — quick realism touch
+  // Study abroad ends 05/09/2026; after that date, remove Galway mention
+  const now = new Date();
+  const galwayEnd = new Date('2026-05-09');
+  if (now > galwayEnd) {
+    const meta = document.querySelector('.hero-meta div p');
+    if (meta && meta.textContent.includes('Galway')) {
+      meta.innerHTML = 'Washington, D.C.';
+    }
+  }
+</script>
+
+</body>
+</html>
