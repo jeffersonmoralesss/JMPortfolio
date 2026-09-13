@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jefferson Morales Melendez</title>
+<title>Jefferson Morales Melendez — Software Engineer & AI Driven Applications</title>
 <meta name="description" content="Portfolio of Jefferson Morales Melendez — Computer Science student at The Catholic University of America specializing in software engineering, cybersecurity, and full-stack web development." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -612,8 +612,8 @@
   }
   .course {
     display: grid;
-    grid-template-columns: 90px 1fr 60px;
-    gap: 1rem;
+    grid-template-columns: 100px 1fr;
+    gap: 1.5rem;
     align-items: center;
     padding: 0.55rem 0;
     border-bottom: 1px dashed var(--line-soft);
@@ -632,12 +632,13 @@
     color: var(--ink);
   }
   .course-name.highlight { color: var(--accent); font-style: italic; }
-  .course-grade {
+  .course-status {
     font-family: var(--mono);
-    font-size: 0.78rem;
-    color: var(--ink-dim);
-    text-align: right;
-    letter-spacing: 0.04em;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--warn);
+    margin-left: 0.6rem;
   }
 
   /* LEADERSHIP */
@@ -808,26 +809,26 @@
   <div class="hero-grid"></div>
   <div class="hero-eyebrow">
     <span class="dot"></span>
-    <span>Available for Summer 2026 internships</span>
+    <span>Senior year &mdash; open to Summer 2027 &amp; new-grad roles</span>
   </div>
   <h1 class="hero-name">
     Jefferson<br>
-    Morales
-    <span class="accent"> Melendez.</span>
+    Morales<br>
+    <span class="accent">Melendez.</span>
   </h1>
   <div class="hero-tags">
     <span>Software Engineering</span>
-    <span>Cybersecurity</span>
     <span>Full-Stack Web</span>
+    <span>AI &amp; Backend Systems</span>
   </div>
   <div class="hero-meta">
     <div>
       <label>Based in</label>
-      <p>Washington, D.C. &mdash; now Galway, IE</p>
+      <p>Washington, D.C.</p>
     </div>
     <div>
       <label>Studying</label>
-      <p>B.S. Computer Science, CUA</p>
+      <p>B.S. Computer Science <em style="color: var(--accent); font-style: italic;">+ Math Minor</em></p>
     </div>
     <div>
       <label>Reach out</label>
@@ -846,20 +847,17 @@
   <div class="section-label">01 &mdash; About</div>
   <div class="about-grid">
     <h2 class="about-heading">
-      A builder at the <em>intersection</em> of code, security, and people.
+      A builder at the <em>intersection</em> of software, systems, and community.
     </h2>
     <div class="about-body">
       <p>
-        I am a Computer Science undergraduate at The Catholic University of America (minor in Mathematics) drawn to the places where clean engineering meets real-world trust &mdash; full-stack apps that small businesses actually use, and security tooling that makes complex systems a little less opaque.
+        I'm a Computer Science undergraduate at The Catholic University of America (minor in Mathematics) drawn to full-stack work that actually ships &mdash; sites that give small businesses a real online presence, backends that hold up under load, and interfaces people trust enough to come back to.
       </p>
       <p>
-        My work spans Django backends and React front ends, automation with Ansible, and cybersecurity fundamentals picked up at MITRE and sharpened in coursework on network security and operating systems. I care about shipping clearly, documenting thoroughly, and building with the person on the other side of the screen in mind. 
+        Right now that means a senior year in machine learning, cloud computing, and databases, plus a senior design project building an AI-guided academic search interface. Alongside classes I run a freelance web development practice serving small businesses across the DMV &mdash; scoping, design, launch, and the cold calls that make it all start.
       </p>
       <p>
-        Beyond code, I enjoy helping others and the community. It was people who share that passion that have helped push and shape me to be where I am at now. I believe in the power of community and shared knowledge to lift everyone up.
-      </p>
-      <p>
-        This semester I'm studying abroad at the University of Galway in Ireland &mdash; writing code in a new timezone and learning how engineers think on the other side of the Atlantic.
+        I'm bilingual (Spanish native), community-driven, and just back from a semester at the University of Galway in Ireland. I care about clear code, honest client communication, and building things that outlast the deploy.
       </p>
     </div>
   </div>
@@ -876,13 +874,14 @@
     <div class="exp-item">
       <div class="exp-date">May 2025 &mdash; Present</div>
       <div>
-        <h3 class="exp-role">Freelance Web Developer</h3>
-        <div class="exp-company">Self-Employed <span>/</span> Largo, MD</div>
+        <h3 class="exp-role">Software Engineer</h3>
+        <div class="exp-company">Freelance / Self-Employed <span>/</span> Largo, MD</div>
         <div class="exp-desc">
           <ul>
-            <li>Build and launch full-stack websites for small businesses using React, Node.js, and vanilla JS/HTML/CSS to lift online visibility and customer engagement.</li>
-            <li>Improved responsiveness and UX for client sites; internal telemetry shows a 15&ndash;20% increase in customer inquiries post-launch.</li>
-            <li>Gather requirements, iterate on designs, and ship maintainable sites aligned with each business's goals.</li>
+            <li>Designed and launched full-stack custom websites for small businesses in underserved communities using React, Node.js, and vanilla JS/HTML/CSS to lift online visibility and customer engagement.</li>
+            <li>Created responsive UX designs and A/B-tested multiple variants per client site, folding customer feedback into each iteration before final launch.</li>
+            <li>Owned client projects end-to-end from scoping to launch &mdash; maintained an average one-day delivery turnaround while managing feature trade-offs and priorities independently. Internal telemetry shows a 15&ndash;20% lift in client inquiries post-launch.</li>
+            <li>Cold-called and pitched local small businesses in person and by phone, landing 3&ndash;5 new clients and driving business development alongside technical delivery.</li>
           </ul>
         </div>
       </div>
@@ -929,16 +928,17 @@
   <div class="projects-grid">
 
     <div class="project-card">
-      <div class="project-num">Project / 001</div>
-      <h3 class="project-title">Network Vulnerability Scanner</h3>
+      <div class="project-num">Project / 001 &mdash; In Progress</div>
+      <h3 class="project-title">AI-Guided Search Interface</h3>
       <p class="project-desc">
-        Co-developed a tool that detects, ranks, and reports common network vulnerabilities, then generates automated PDF reports with actionable remediation notes. Implemented modular scanning workflows and a results-aggregation layer so findings are easy to triage.
+        Senior Design capstone &mdash; serving as backend developer on a three-person team building an AI-guided learning interface for <em>source-grounded academic search</em>. Owning backend architecture, APIs, and data handling; supporting search/retrieval and AI integration; and coordinating testing and user-study evaluation with the team.
       </p>
       <div class="project-stack">
         <span>Python</span>
-        <span>Networking</span>
-        <span>Security</span>
-        <span>PDF Reporting</span>
+        <span>LLM Integration</span>
+        <span>REST APIs</span>
+        <span>Backend</span>
+        <span>Search &amp; Retrieval</span>
       </div>
     </div>
 
@@ -946,7 +946,7 @@
       <div class="project-num">Project / 002</div>
       <h3 class="project-title">LocalAid Connect</h3>
       <p class="project-desc">
-        A full-stack web app that helps people find nearby community resources &mdash; food banks, medicine &amp; vaccines, shelter, legal support. React front end, Node/Express + SQLite backend, with location-based search wired up through Google Maps/Places and maintainable REST APIs.
+        A full-stack web app that helps people find nearby community resources &mdash; food banks, medicine &amp; vaccines, shelter, legal support. React front end, Node/Express + SQLite backend, with location-based search wired up through Google Maps/Places. REST APIs were designed to <em>append new resources dynamically</em> as they're found &mdash; no fixed database cap, so coverage grows as the community adds to it.
       </p>
       <div class="project-stack">
         <span>React</span>
@@ -954,6 +954,20 @@
         <span>Express</span>
         <span>SQLite</span>
         <span>Google Maps API</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">Project / 003</div>
+      <h3 class="project-title">Network Vulnerability Scanner</h3>
+      <p class="project-desc">
+        Built a scanner that sweeps the full TCP port range per target, then ranks findings and auto-generates PDF remediation reports &mdash; cutting manual triage time versus checking ports individually. Modular scanning workflows and results aggregation with actionable remediation notes.
+      </p>
+      <div class="project-stack">
+        <span>Python</span>
+        <span>Networking</span>
+        <span>Security</span>
+        <span>PDF Reporting</span>
       </div>
     </div>
 
@@ -989,24 +1003,25 @@
         </ul>
       </div>
       <div class="skills-group">
-        <h4>Systems &amp; Ops</h4>
+        <h4>Tools &amp; Cloud</h4>
         <ul>
-          <li>Ansible</li>
+          <li>AWS</li>
+          <li>Docker</li>
+          <li>Visual Studio</li>
           <li>Git &amp; GitHub</li>
-          <li>Linux / CLI</li>
-          <li>SQLite</li>
-          <li>Operating Systems</li>
-          <li>Machine Learning</li>
+          <li>Linux / Unix</li>
+          <li>Ansible</li>
+          <li>MS PowerApps &amp; Suite</li>
         </ul>
       </div>
       <div class="skills-group">
-        <h4>Security &amp; Practice</h4>
+        <h4>Off-Screen</h4>
         <ul>
-          <li>Network Security</li>
-          <li>Threat Modeling</li>
-          <li>Debugging</li>
-          <li>Technical Writing</li>
-          <li>Client Communication</li>
+          <li>Native Spanish</li>
+          <li>Entrepreneurship</li>
+          <li>Prospecting &amp; Sales</li>
+          <li>Community Work</li>
+          <li>Soccer</li>
         </ul>
       </div>
     </div>
@@ -1019,10 +1034,12 @@
 <section id="coursework" class="reveal">
   <div class="section-label">05 &mdash; Academic Record</div>
   <div class="courses-intro">
-    <h2 class="courses-heading">Six semesters at <em>CUA</em> &mdash; now studying abroad in Ireland.</h2>
+    <h2 class="courses-heading">Seven semesters &mdash; <em>Washington, D.C.</em> and <em>Galway, Ireland</em>.</h2>
     <div class="courses-meta">
-      <div class="stat"><strong>82</strong>Credits Completed</div>
-      <div class="stat"><strong>2027</strong>Expected Graduation</div>
+      <div class="stat"><strong>BSCS</strong>Major</div>
+      <div class="stat"><strong>&pi;</strong>Math Minor</div>
+      <div class="stat"><strong>IV</strong>Senior Year</div>
+      <div class="stat"><strong>2027</strong>May Graduation</div>
     </div>
   </div>
 
@@ -1031,12 +1048,12 @@
       Fall 2023
     </div>
     <div class="course-list">
-      <div class="course"><span class="course-code">CSC 120</span><span class="course-name">Intro to Computational Thinking</span><span class="course-grade">B&minus;</span></div>
-      <div class="course"><span class="course-code">CSC 123</span><span class="course-name">Intro to Computer Programming</span><span class="course-grade">A</span></div>
-      <div class="course"><span class="course-code">MATH 121</span><span class="course-name">Analytic Geometry &amp; Calc I</span><span class="course-grade">B+</span></div>
-      <div class="course"><span class="course-code">ENGR 121</span><span class="course-name">Engineering Math Workshop I</span><span class="course-grade">P</span></div>
-      <div class="course"><span class="course-code">ENG 101</span><span class="course-name">Writing and Rhetoric</span><span class="course-grade">B+</span></div>
-      <div class="course"><span class="course-code">PHIL 201</span><span class="course-name">The Classical Mind</span><span class="course-grade">B+</span></div>
+      <div class="course"><span class="course-code">CSC 120</span><span class="course-name">Intro to Computational Thinking</span></div>
+      <div class="course"><span class="course-code">CSC 123</span><span class="course-name">Intro to Computer Programming</span></div>
+      <div class="course"><span class="course-code">MATH 121</span><span class="course-name">Analytic Geometry &amp; Calc I</span></div>
+      <div class="course"><span class="course-code">ENGR 121</span><span class="course-name">Engineering Math Workshop I</span></div>
+      <div class="course"><span class="course-code">ENG 101</span><span class="course-name">Writing and Rhetoric</span></div>
+      <div class="course"><span class="course-code">PHIL 201</span><span class="course-name">The Classical Mind</span></div>
     </div>
   </div>
 
@@ -1045,12 +1062,12 @@
       Spring 2024
     </div>
     <div class="course-list">
-      <div class="course"><span class="course-code">CSC 210</span><span class="course-name">Discrete Mathematics</span><span class="course-grade">C+</span></div>
-      <div class="course"><span class="course-code">CSC 223</span><span class="course-name highlight">Object-Oriented Programming w/ Java</span><span class="course-grade">A</span></div>
-      <div class="course"><span class="course-code">MATH 122</span><span class="course-name highlight">Analytic Geometry &amp; Calc II</span><span class="course-grade">A</span></div>
-      <div class="course"><span class="course-code">ENGR 122</span><span class="course-name">Engineering Math Workshop II</span><span class="course-grade">P</span></div>
-      <div class="course"><span class="course-code">TRS 201</span><span class="course-name">Foundations of Theology I</span><span class="course-grade">A&minus;</span></div>
-      <div class="course"><span class="course-code">PHIL 202</span><span class="course-name">The Modern Mind</span><span class="course-grade">B</span></div>
+      <div class="course"><span class="course-code">CSC 210</span><span class="course-name">Discrete Mathematics</span></div>
+      <div class="course"><span class="course-code">CSC 223</span><span class="course-name highlight">Object-Oriented Programming w/ Java</span></div>
+      <div class="course"><span class="course-code">MATH 122</span><span class="course-name">Analytic Geometry &amp; Calc II</span></div>
+      <div class="course"><span class="course-code">ENGR 122</span><span class="course-name">Engineering Math Workshop II</span></div>
+      <div class="course"><span class="course-code">TRS 201</span><span class="course-name">Foundations of Theology I</span></div>
+      <div class="course"><span class="course-code">PHIL 202</span><span class="course-name">The Modern Mind</span></div>
     </div>
   </div>
 
@@ -1059,12 +1076,12 @@
       Fall 2024
     </div>
     <div class="course-list">
-      <div class="course"><span class="course-code">CSC 212</span><span class="course-name">Theory of Computing</span><span class="course-grade">B</span></div>
-      <div class="course"><span class="course-code">CSC 280</span><span class="course-name">Data Structures</span><span class="course-grade">B</span></div>
-      <div class="course"><span class="course-code">CSC 370</span><span class="course-name">Programming Languages</span><span class="course-grade">B+</span></div>
-      <div class="course"><span class="course-code">BIOL 105</span><span class="course-name">Mechanisms of Life I</span><span class="course-grade">A&minus;</span></div>
-      <div class="course"><span class="course-code">BIOL 115</span><span class="course-name">Mechanisms of Life I &mdash; Lab</span><span class="course-grade">A</span></div>
-      <div class="course"><span class="course-code">PSY 201</span><span class="course-name">General Psychology</span><span class="course-grade">B+</span></div>
+      <div class="course"><span class="course-code">CSC 212</span><span class="course-name">Theory of Computing</span></div>
+      <div class="course"><span class="course-code">CSC 280</span><span class="course-name highlight">Data Structures</span></div>
+      <div class="course"><span class="course-code">CSC 370</span><span class="course-name">Programming Languages</span></div>
+      <div class="course"><span class="course-code">BIOL 105</span><span class="course-name">Mechanisms of Life I</span></div>
+      <div class="course"><span class="course-code">BIOL 115</span><span class="course-name">Mechanisms of Life I &mdash; Lab</span></div>
+      <div class="course"><span class="course-code">PSY 201</span><span class="course-name">General Psychology</span></div>
     </div>
   </div>
 
@@ -1073,12 +1090,12 @@
       Spring 2025
     </div>
     <div class="course-list">
-      <div class="course"><span class="course-code">CSC 322</span><span class="course-name">Intro to Computer Graphics</span><span class="course-grade">C+</span></div>
-      <div class="course"><span class="course-code">CSC 323</span><span class="course-name">Intro to Computer Networks</span><span class="course-grade">B</span></div>
-      <div class="course"><span class="course-code">CSC 326</span><span class="course-name">Switching Circuits &amp; Logic Design</span><span class="course-grade">C+</span></div>
-      <div class="course"><span class="course-code">CSC 327</span><span class="course-name">Switching Circuits &amp; Logic Lab</span><span class="course-grade">C+</span></div>
-      <div class="course"><span class="course-code">CSC 363</span><span class="course-name highlight">Software Engineering</span><span class="course-grade">B+</span></div>
-      <div class="course"><span class="course-code">TRS 202B</span><span class="course-name">The Church &amp; the Human Person</span><span class="course-grade">C+</span></div>
+      <div class="course"><span class="course-code">CSC 322</span><span class="course-name">Intro to Computer Graphics</span></div>
+      <div class="course"><span class="course-code">CSC 323</span><span class="course-name">Intro to Computer Networks</span></div>
+      <div class="course"><span class="course-code">CSC 326</span><span class="course-name">Switching Circuits &amp; Logic Design</span></div>
+      <div class="course"><span class="course-code">CSC 327</span><span class="course-name">Switching Circuits &amp; Logic Lab</span></div>
+      <div class="course"><span class="course-code">CSC 363</span><span class="course-name highlight">Software Engineering</span></div>
+      <div class="course"><span class="course-code">TRS 202B</span><span class="course-name">The Church &amp; the Human Person</span></div>
     </div>
   </div>
 
@@ -1087,25 +1104,40 @@
       Fall 2025
     </div>
     <div class="course-list">
-      <div class="course"><span class="course-code">CSC 390</span><span class="course-name">Computer Organization &amp; Architecture</span><span class="course-grade">C+</span></div>
-      <div class="course"><span class="course-code">CSC 426</span><span class="course-name highlight">Computer &amp; Network Security</span><span class="course-grade">A&minus;</span></div>
-      <div class="course"><span class="course-code">MATH 221</span><span class="course-name highlight">Analytic Geometry &amp; Calc III</span><span class="course-grade">A</span></div>
-      <div class="course"><span class="course-code">PHYS 205</span><span class="course-name">College Physics I</span><span class="course-grade">B&minus;</span></div>
-      <div class="course"><span class="course-code">PHYS 225</span><span class="course-name">Introductory Mechanics Lab</span><span class="course-grade">A</span></div>
+      <div class="course"><span class="course-code">CSC 390</span><span class="course-name">Computer Organization &amp; Architecture</span></div>
+      <div class="course"><span class="course-code">CSC 426</span><span class="course-name">Computer &amp; Network Security</span></div>
+      <div class="course"><span class="course-code">MATH 221</span><span class="course-name">Analytic Geometry &amp; Calc III</span></div>
+      <div class="course"><span class="course-code">PHYS 205</span><span class="course-name">College Physics I</span></div>
+      <div class="course"><span class="course-code">PHYS 225</span><span class="course-name">Introductory Mechanics Lab</span></div>
     </div>
   </div>
 
   <div class="semester">
     <div class="sem-header">
       Spring 2026
-      <span class="sem-gpa" style="color: var(--warn);">In progress &mdash; University of Galway</span>
+      <span class="sem-gpa">University of Galway, Ireland</span>
     </div>
     <div class="course-list">
-      <div class="course"><span class="course-code">AR 1104</span><span class="course-name highlight">Medieval Ireland</span><span class="course-grade">&mdash;</span></div>
-      <div class="course"><span class="course-code">IS 2103</span><span class="course-name highlight">Irish Landscapes</span><span class="course-grade">&mdash;</span></div>
-      <div class="course"><span class="course-code">MA 203</span><span class="course-name">Linear Algebra</span><span class="course-grade">&mdash;</span></div>
-      <div class="course"><span class="course-code">CS 211</span><span class="course-name">Web Development</span><span class="course-grade">&mdash;</span></div>
-      <div class="course"><span class="course-code">CT 210</span><span class="course-name">Programming &amp; Operating Systems</span><span class="course-grade">&mdash;</span></div>
+      <div class="course"><span class="course-code">HIST</span><span class="course-name highlight">Medieval Ireland</span></div>
+      <div class="course"><span class="course-code">GEOG</span><span class="course-name highlight">Irish Landscapes</span></div>
+      <div class="course"><span class="course-code">MATH</span><span class="course-name">Linear Algebra</span></div>
+      <div class="course"><span class="course-code">CSC</span><span class="course-name">Web Development</span></div>
+      <div class="course"><span class="course-code">CSC</span><span class="course-name">Programming &amp; Operating Systems</span></div>
+    </div>
+  </div>
+
+  <div class="semester">
+    <div class="sem-header">
+      Fall 2026
+      <span class="sem-gpa" style="color: var(--warn);">In progress &mdash; Senior Year</span>
+    </div>
+    <div class="course-list">
+      <div class="course"><span class="course-code">ENGR 441</span><span class="course-name highlight">Interdisciplinary Senior Design I</span></div>
+      <div class="course"><span class="course-code">AI 484</span><span class="course-name highlight">Introduction to Machine Learning</span></div>
+      <div class="course"><span class="course-code">CSC 410</span><span class="course-name highlight">Fundamentals of Cloud Computing</span></div>
+      <div class="course"><span class="course-code">CSC 442</span><span class="course-name">Introduction to Database Management</span></div>
+      <div class="course"><span class="course-code">MATH 309</span><span class="course-name">Probability &amp; Statistics for Engineers</span></div>
+      <div class="course"><span class="course-code">PHIL 362</span><span class="course-name">Professional Ethics in Engineering</span></div>
     </div>
   </div>
 </section>
@@ -1120,10 +1152,10 @@
 
     <div class="leader-card">
       <div class="icon">&#10070;</div>
-      <h3>President &mdash; Leetcode &amp; Technical Interview Club</h3>
-      <div class="org">The Catholic University of America</div>
+      <h3>Student Ambassador</h3>
+      <div class="org">College of Engineering, Physics &amp; Computing &middot; CUA</div>
       <p>
-        Founded a student-run club to prep peers for coding assessments and technical interviews &mdash; helping classmates land internships at companies where algorithmic and behavioral interviews are the gate.
+        Represent the College at recruitment and community events &mdash; guiding prospective students and their families through what an engineering education at CUA actually looks like day-to-day.
       </p>
     </div>
 
@@ -1207,17 +1239,6 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Update "Based in" based on today's date — quick realism touch
-  // Study abroad ends 05/09/2026; after that date, remove Galway mention
-  const now = new Date();
-  const galwayEnd = new Date('2026-05-09');
-  if (now > galwayEnd) {
-    const meta = document.querySelector('.hero-meta div p');
-    if (meta && meta.textContent.includes('Galway')) {
-      meta.innerHTML = 'Washington, D.C.';
-    }
-  }
 </script>
 
 </body>
