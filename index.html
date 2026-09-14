@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jefferson Morales Melendez — Software Engineer & AI Driven Applications</title>
+<title>Jefferson Morales Melendez — Software Engineer & Cybersecurity</title>
 <meta name="description" content="Portfolio of Jefferson Morales Melendez — Computer Science student at The Catholic University of America specializing in software engineering, cybersecurity, and full-stack web development." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -502,6 +502,48 @@
     color: var(--ink-dim);
     letter-spacing: 0.04em;
   }
+  .projects-cta {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .projects-cta p {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 1.05rem;
+    max-width: 40ch;
+  }
+  .projects-cta a {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 0.9rem 1.5rem;
+    border: 1px solid var(--line);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: color 0.3s, border-color 0.3s, background 0.3s;
+    white-space: nowrap;
+  }
+  .projects-cta a:hover {
+    color: var(--bg);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .projects-cta a .arrow {
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  .projects-cta a:hover .arrow { transform: translateX(4px); }
 
   /* SKILLS */
   .skills-container {
@@ -809,7 +851,7 @@
   <div class="hero-grid"></div>
   <div class="hero-eyebrow">
     <span class="dot"></span>
-    <span>Senior year &mdash; open to Summer 2027 &amp; new-grad roles</span>
+    <span>Senior year &mdash; open to Summer 2027 &amp; new-grad SWE roles</span>
   </div>
   <h1 class="hero-name">
     Jefferson<br>
@@ -837,6 +879,10 @@
     <div>
       <label>LinkedIn</label>
       <p><a href="https://www.linkedin.com/in/jefferson-morales-melendez/" target="_blank" rel="noopener">/in/jefferson-morales-melendez</a></p>
+    </div>
+    <div>
+      <label>GitHub</label>
+      <p><a href="https://github.com/jeffersonmoralesss" target="_blank" rel="noopener">/jeffersonmoralesss</a></p>
     </div>
   </div>
   <div class="scroll-indicator">Scroll</div>
@@ -971,6 +1017,13 @@
       </div>
     </div>
 
+  </div>
+
+  <div class="projects-cta">
+    <p>More projects, experiments, and works-in-progress live on GitHub.</p>
+    <a href="https://github.com/jeffersonmoralesss" target="_blank" rel="noopener">
+      Browse the full archive <span class="arrow">&rarr;</span>
+    </a>
   </div>
 </section>
 
@@ -1199,6 +1252,10 @@
     <a href="https://www.linkedin.com/in/jefferson-morales-melendez/" target="_blank" rel="noopener">
       <span class="label">LinkedIn &rarr;</span>
       /in/jefferson-morales-melendez
+    </a>
+    <a href="https://github.com/jeffersonmoralesss" target="_blank" rel="noopener">
+      <span class="label">GitHub &rarr;</span>
+      /jeffersonmoralesss
     </a>
     <a href="#top">
       <span class="label">Back &rarr;</span>
